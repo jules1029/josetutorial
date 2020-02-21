@@ -1,12 +1,18 @@
-public class Car {
+public abstract class Car {
     public string CarType { get; set; }
     public string WheelBrand { get; set; }
 
     public void Drive()
     {
         //car driving noise here
+        //Imagine the code
     }
 
+    //Has to be overridden by child class
+    public abstract void DrivinDirty()
+    {
+
+    }
 }
 
 public class Tuscon : Car 
@@ -16,6 +22,11 @@ public class Tuscon : Car
         CarType = "Hyundai";
         WheelBrand = "Firestone";
     }
+
+    public override void Drive()
+    {
+        //Imagine code here that drives differently
+    }
 }
 
 public class Fiesta : Car 
@@ -24,6 +35,8 @@ public class Fiesta : Car
     {
         CarType = "Ford";
         WheelBrand = "Michelen";
+
+        base.Drive();
     }
 }
 
@@ -31,7 +44,18 @@ public class Fiesta : Car
 public class Program {
     public static void Main(string[] args)
     {
-        Tuscon myCar = new Tuscon();
+        Car myCar = GetCar();
         Console.WriteLine(myCar.CarType);
+    }
+
+    public static Car GetCar(string name)
+    {
+        if(name == "Tuscon")
+            return new Tuscon();
+
+        if(name == "Fiesta")
+            return new Fiesta();
+
+        return null;
     }
 }
