@@ -1,3 +1,6 @@
+//Class marked with abstract cannot be instantiated (cannot make new instances) only their child classes
+//BaseClass has implementations in it
+//BaseClasses allow you to share functionality between several classes at the cost of tying you to it's implementation
 public abstract class Car {
     public string CarType { get; set; }
     public string WheelBrand { get; set; }
@@ -15,6 +18,7 @@ public abstract class Car {
     }
 }
 
+//Child class implements car and only needs to override the parts that need to change
 public class Tuscon : Car 
 {
     public Tuscon()
@@ -29,6 +33,7 @@ public class Tuscon : Car
     }
 }
 
+//Child class implements car and only needs to override the parts that need to change
 public class Fiesta : Car 
 {
     public Tuscon()
@@ -36,6 +41,7 @@ public class Fiesta : Car
         CarType = "Ford";
         WheelBrand = "Michelen";
 
+        //base lets you call methods on your parent (base) class
         base.Drive();
     }
 }
@@ -44,10 +50,15 @@ public class Fiesta : Car
 public class Program {
     public static void Main(string[] args)
     {
-        Car myCar = GetCar();
+        Console.WriteLine("Which car do you have Tuscon/Fiesta?");
+        string carName = console.Readling();
+
+        //Returns an instance of any car 
+        Car myCar = GetCar(carName);
         Console.WriteLine(myCar.CarType);
     }
 
+    //Dynamically returns an instance of the Car base class (polymorphism)
     public static Car GetCar(string name)
     {
         if(name == "Tuscon")
