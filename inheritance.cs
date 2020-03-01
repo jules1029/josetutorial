@@ -51,11 +51,31 @@ public class Program {
     public static void Main(string[] args)
     {
         Console.WriteLine("Which car do you have Tuscon/Fiesta?");
-        string carName = console.Readling();
+        string carName = console.Readline();
 
         //Returns an instance of any car 
-        Car myCar = GetCar(carName);
-        Console.WriteLine(myCar.CarType);
+
+        //to handle exceptions use try and catch blocks
+        //your code attemps to execute what's in the try block
+        //if that fails it goes to the catch block
+        try {
+            Car myCar = GetCar(carName);
+            Console.WriteLine(myCar.CarType);
+        } 
+        //Only catches invalid operation exceptions
+        catch(InvalidOperationException ex)
+        {
+            Console.WriteLine("Please enter a valid car name");
+        }
+        //catches any exeception that gets thrown (is fall through if the exception is not InvalidOperationException)
+        catch(Exception ex)
+        {
+            Console.WriteLine("This got really messed up");
+        }
+        //gets called whether the code was successful or not
+        finally {
+            Console.WriteLine("exiting application");
+        }
     }
 
     //Dynamically returns an instance of the Car base class (polymorphism)
@@ -67,6 +87,8 @@ public class Program {
         if(name == "Fiesta")
             return new Fiesta();
 
-        return null;
+        //throw tells the application to throw an exception here
+        //Exceptions are a special type of class that all inherit exception base class
+        throw new InvalidOperationException("plese enter a valid car name");
     }
 }
