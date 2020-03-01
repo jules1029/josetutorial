@@ -1,0 +1,49 @@
+/* element selector */
+h1 {
+    color:#f2f2f2;
+}
+
+/* class selector */
+.foo {
+    color: purple;
+}
+
+/* id selector*/
+#single {
+
+}
+
+/* an h1 tag that has a class foo on it*/
+h1.foo {
+
+}
+
+/* selecting a class foo that is a descendant of an h1 tag */
+h1 .foo {
+
+}
+
+/* selecting a class foo that is a direct child of an h1 tag */
+h1 > .foo {
+
+}
+
+/* classes and ids are attributes that can be added to html elements to make styling them easier
+the main difference a class and an id in css is that a class be used multiple times but an id can only be used once
+*/
+
+/*
+CSS uses something called specficity to determine which style rule to apply
+Uses a weighting system
+element name = 1
+class = 10
+id = 100
+
+so whichever has the highest combined output wins and decides what style will be applied
+*/
+
+/*
+Is the box model.
+Everything on your webpage that you see is box nested inside of another box
+plese google visuals later
+*/
