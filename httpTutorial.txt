@@ -1,0 +1,61 @@
+https://www.google.com/search?searchTerm=hi (example url)
+URl 
+    Uniform Resource Locator
+    Used to uniquely identify and return a given Resource
+    On the internet this is commonly html/css/javscript
+
+https:
+    Protocol
+    The protocol is how the data will be transported
+    http standards for hyper text transport protocol
+
+google.com
+    domain
+    domain name gets turned into an IP address after look Domain Name Server and routes to a given Server
+
+www.
+    sub-domain
+    so each sub-domain can get transalated to a different ip address
+    e.g., www would be for web traffic and mail.google.com would be for email
+    hi.wwww.mywebsite.com
+
+.com
+    top level domain
+    this is generally to denote what type of org it is
+    .com, .gov, .org, .edu
+
+/search
+    Path
+    The path indicates which resource to access on the domain
+    in this example /search means we want to go to the search page on www.google.com
+
+?searchTerm=hi
+    Query string
+    The query string allows you pass parameters to the server for it to use in calculations
+    in this example the searchTerm parameter has a value of hi
+
+
+http is a standard request format so evertime you visit something in a browser the following happens. It goes in the following flow 
+
+http request goes out
+http response returns
+
+rinse and repeat
+
+Structure of an HTTP request
+Http is made up of a head and a body
+
+the head is for passing meta-data (information about the request) forward via parameters
+these parameters are called headers:
+    Content-Type: text/html
+    Content-Length: 8
+
+It also body for passing data in a payload
+
+There are multiple METHODS in HTTP
+    GET is retrieving data
+    POST is for posting and updating data
+    PUT is creating a new resource
+    DELETE is for deleting resources
+
+

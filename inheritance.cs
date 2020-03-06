@@ -58,6 +58,7 @@ public class Program {
         //to handle exceptions use try and catch blocks
         //your code attemps to execute what's in the try block
         //if that fails it goes to the catch block
+        //you need a try and a finally block catch is optional
         try {
             Car myCar = GetCar(carName);
             Console.WriteLine(myCar.CarType);
