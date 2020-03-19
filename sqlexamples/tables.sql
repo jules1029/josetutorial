@@ -14,7 +14,7 @@
 
 create table dbo.Users 
 (
-	Id bigint not null AUTO_INCREMENT primary key,
+	Id bigint not null identity(1,1) primary key,
 	UserName varchar(500) not null unique,
 	FirstName varchar(500) not null,
 	CreateDate datetime not null,
