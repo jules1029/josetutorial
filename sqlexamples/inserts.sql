@@ -1,6 +1,6 @@
 --now we need to add some data to your table
 insert into dbo.Users (UserName, FirstName, CreateDate, State, IsActive, NickName) 
-values ('jose.mel', 'Jose', NOW(), 'TX', 1, null);
+values ('jose.mel', 'Jose', GETDATE(), 'TX', 1, null);
 
 --insert into {table name} tells sql which talbe you would like to put data into
 --the parentheses immediately after contain all the column names you would like to insert into
@@ -12,6 +12,6 @@ values ('jose.mel', 'Jose', NOW(), 'TX', 1, null);
 
 --if you have all the columns in the values that are in your table (minus AUTO_INCREMENT or identity columns) then you don't need to specify column name
 insert into dbo.Users
-values ('jules.m', 'Jules', NOW(), 'TX', 1, null);
+values ('jules.m', 'Jules', GETDATE(), 'TX', 1, null);
 
 
